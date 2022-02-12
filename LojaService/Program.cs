@@ -1,7 +1,7 @@
 using LojaAplicacao;
 using LojaData.Contexto;
 using LojaData.Repositories;
-using LojaDominio.Interfaces.;
+using LojaDominio.Interfaces.Aplicacao;
 using LojaDominio.Interfaces.Repositorios;
 
 var builder = WebApplication.CreateBuilder(args);

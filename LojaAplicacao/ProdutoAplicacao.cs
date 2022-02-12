@@ -36,11 +36,13 @@ namespace LojaAplicacao
 
         public void Atualiza(Produto produto)
         {
-            if (_produtoRepository.Exists(produto.Id){
+            if (_produtoRepository.Exists(produto.Id)){
                 _produtoRepository.Atualiza(produto);
                 _produtoRepository.Salvar();
 
             }
+            else
+                throw new Exception("Produto não existe");
         }
 
         public void Deleta(int id)
@@ -51,6 +53,8 @@ namespace LojaAplicacao
                 _produtoRepository.Deleta(produto);
                 _produtoRepository.Salvar();
             }
+            else
+                throw new Exception("Produto não existe");
         }
 
     }

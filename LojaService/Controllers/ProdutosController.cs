@@ -29,55 +29,66 @@ namespace LojaService.Controllers
             }
         }
 
-         [HttpGet("{id}")]
+        [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            try { 
-            return Ok(_produtoAplicacao.ObterPorId(id));
+            try
+            {
+                return Ok(_produtoAplicacao.ObterPorId(id));
 
-        }
+            }
             catch (Exception)
             {
                 return BadRequest("Erro ao busca produtos");
 
-    }
-}
+            }
+        }
 
         [HttpPost]
         public IActionResult Post([FromBody] Produto produto)
         {
-            _produtoRepository.CriarNovo(produto);
-            _produtoRepository.Salvar();
-            return Ok();
+            try
+            {
+                _produtoAplicacao.CriarNovo(produto);
+                return Created("Get", new {id=produto.Id});
+            }
+            catch (Exception ex)
+            {
 
-            
+                return BadRequest(ex.Message);
+            }
+
+
         }
 
-       [HttpPut("{id}")]
+        [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] Produto produto)
         {
-            if (_produtoRepository.Exists(id))
+            try
             {
-                _produtoRepository.Atualiza(produto);
-                _produtoRepository.Salvar();
+                _produtoAplicacao.Atualiza(produto);
                 return Ok();
             }
-            else
-                return BadRequest();
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            if (_produtoRepository.Exists(id))
+            try
             {
-                var produto = _produtoRepository.ObterPorId(id);
-                _produtoRepository.Deleta(produto);
-                _produtoRepository.Salvar();
+                _produtoAplicacao.Deleta(id);
                 return Ok();
             }
-            else
-                return BadRequest();
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
         }
     }
 }
