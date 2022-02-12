@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - API", "1 - API", "{ADF917BD-19C8-4A7C-844C-786D32CA497B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Service", "1 - Service", "{ADF917BD-19C8-4A7C-844C-786D32CA497B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Aplicacao", "2 - Aplicacao", "{2C2C6B13-B98D-4055-B499-15038BCC5214}"
 EndProject
@@ -11,13 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domnio", "3 - Domnio", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Data", "4 - Data", "{34AD70AD-6110-45D2-A1B3-E2BDF272A3F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LojaService", "LojaService\LojaService.csproj", "{6D96D708-6278-4772-BF22-5105B84BF46D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LojaService", "LojaService\LojaService.csproj", "{6D96D708-6278-4772-BF22-5105B84BF46D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LojaAplicacao", "LojaAplicacao\LojaAplicacao.csproj", "{EA4C65E6-CF43-48C4-BDB6-09C0D516446A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LojaAplicacao", "LojaAplicacao\LojaAplicacao.csproj", "{EA4C65E6-CF43-48C4-BDB6-09C0D516446A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LojaDominio", "LojaDominio\LojaDominio.csproj", "{93929FAF-7F32-4ABF-B2E8-F2A60FB9A889}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LojaDominio", "LojaDominio\LojaDominio.csproj", "{93929FAF-7F32-4ABF-B2E8-F2A60FB9A889}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LojaData", "LojaData\LojaData.csproj", "{5386D7D1-3D31-4F37-9398-B88AEDF09836}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LojaData", "LojaData\LojaData.csproj", "{5386D7D1-3D31-4F37-9398-B88AEDF09836}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

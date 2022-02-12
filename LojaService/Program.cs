@@ -1,5 +1,7 @@
+using LojaAplicacao;
 using LojaData.Contexto;
 using LojaData.Repositories;
+using LojaDominio.Interfaces.;
 using LojaDominio.Interfaces.Repositorios;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +16,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<curso2022Context>();
 builder.Services.AddTransient<ICategoriaRepository, CategoriaRepository>();
 builder.Services.AddTransient<IProdutoRepository, ProdutoRepository>();
+builder.Services.AddTransient<IProdutoAplicacao, ProdutoAplicacao>();
 
 //builder.Configuration.LazyLoadingEnabled(False);
 var app = builder.Build();

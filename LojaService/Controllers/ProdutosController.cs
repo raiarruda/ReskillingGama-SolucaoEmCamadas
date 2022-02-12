@@ -1,4 +1,5 @@
 ﻿using LojaDominio.Entidades;
+using LojaDominio.Interfaces.Aplicacao;
 using LojaDominio.Interfaces.Repositorios;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,22 +9,39 @@ namespace LojaService.Controllers
     [ApiController]
     public class ProdutosController : ControllerBase
     {
-        IProdutoRepository _produtoRepository;
-        public ProdutosController(IProdutoRepository produtoRepository)
+        private readonly IProdutoAplicacao _produtoAplicacao;
+
+        public ProdutosController(IProdutoAplicacao produtoAplicacao)
         {
-            _produtoRepository = produtoRepository;
+            _produtoAplicacao = produtoAplicacao;
         }
-         [HttpGet]
+        [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_produtoRepository.ObterTodos());
+            try
+            {
+                return Ok(_produtoAplicacao.ObterTodos());
+            }
+            catch (Exception)
+            {
+                return BadRequest("Erro ao busca produtos");
+
+            }
         }
 
          [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            return Ok(_produtoRepository.ObterPorId(id));
+            try { 
+            return Ok(_produtoAplicacao.ObterPorId(id));
+
         }
+            catch (Exception)
+            {
+                return BadRequest("Erro ao busca produtos");
+
+    }
+}
 
         [HttpPost]
         public IActionResult Post([FromBody] Produto produto)

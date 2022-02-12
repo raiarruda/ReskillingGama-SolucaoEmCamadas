@@ -1,4 +1,5 @@
 ﻿using LojaDominio.Entidades;
+using LojaDominio.Interfaces.Aplicacao;
 using LojaDominio.Interfaces.Repositorios;
 using System;
 using System.Collections.Generic;
@@ -8,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace LojaAplicacao
 {
-    public class IProdutoAplicacao
-    {
+    public class ProdutoAplicacao : IProdutoAplicacao
+    { 
         private readonly IProdutoRepository _produtoRepository;
-        public IProdutoAplicacao(IProdutoRepository produtoRepository)
+        public ProdutoAplicacao(IProdutoRepository produtoRepository)
         {
             _produtoRepository = produtoRepository;
         }
